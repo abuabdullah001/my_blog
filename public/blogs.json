@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "category_id": 2,
+    "title": "Getting Started with Laravel 12: Complete Beginner Guide",
+    "slug": "getting-started-with-laravel-12-complete-beginner-guide",
+    "author": {
+      "name": "Abdullah",
+      "avatar": "https://i.pravatar.cc/150?img=12",
+      "bio": "Full Stack Developer specializing in Laravel and React."
+    },
+    "featured_image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    "excerpt": "Learn how to build modern web applications using Laravel 12 from scratch.",
+    "content": "Laravel 12 introduces powerful new features and performance improvements that make web development faster and more enjoyable. In this detailed guide, we cover installation, routing, controllers, migrations, Eloquent ORM, authentication, API development, testing, and deployment strategies. Whether you are a beginner or an experienced developer, this tutorial will help you understand how to build scalable and maintainable applications using Laravel.",
+    "tags": ["Laravel", "PHP", "Web Development", "Backend", "API"],
+    "views": 15420,
+    "likes": 980,
+    "comments_count": 47,
+    "read_time": "8 min read",
+    "status": "published",
+    "is_featured": true,
+    "published_at": "2026-05-09T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "category_id": 2,
+    "title": "React.js Best Practices for Modern Frontend Development",
+    "slug": "react-js-best-practices-modern-frontend-development",
+    "author": {
+      "name": "Abdullah",
+      "avatar": "https://i.pravatar.cc/150?img=15",
+      "bio": "Frontend and Full Stack Developer."
+    },
+    "featured_image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+    "excerpt": "Explore the most effective React.js techniques for 2026.",
+    "content": "React remains one of the most popular frontend libraries in the world. This article covers component design, hooks, state management, performance optimization, code splitting, testing, and project structure. By following these best practices, developers can build maintainable and highly scalable user interfaces.",
+    "tags": ["React", "JavaScript", "Frontend", "Hooks", "Performance"],
+    "views": 12340,
+    "likes": 720,
+    "comments_count": 31,
+    "read_time": "6 min read",
+    "status": "published",
+    "is_featured": true,
+    "published_at": "2026-05-08T09:30:00Z"
+  },
+  {
+    "id": 3,
+    "category_id": 3,
+    "title": "How Artificial Intelligence is Transforming Software Development",
+    "slug": "how-artificial-intelligence-is-transforming-software-development",
+    "author": {
+      "name": "Abdullah",
+      "avatar": "https://i.pravatar.cc/150?img=18",
+      "bio": "AI and Automation Enthusiast."
+    },
+    "featured_image": "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    "excerpt": "Discover how AI tools are changing the way developers write code.",
+    "content": "Artificial Intelligence is revolutionizing the software industry by automating repetitive tasks, assisting with code generation, improving testing, and accelerating development workflows. From intelligent code assistants to predictive analytics, AI is helping teams become more productive and innovative.",
+    "tags": ["AI", "Machine Learning", "Automation", "Software Development"],
+    "views": 18950,
+    "likes": 1430,
+    "comments_count": 68,
+    "read_time": "10 min read",
+    "status": "published",
+    "is_featured": false,
+    "published_at": "2026-05-07T08:15:00Z"
+  },
+  {
+    "id": 4,
+    "category_id": 4,
+    "title": "10 Powerful SEO Strategies to Grow Your Blog Traffic",
+    "slug": "10-powerful-seo-strategies-to-grow-your-blog-traffic",
+    "author": {
+      "name": "Abdullah",
+      "avatar": "https://i.pravatar.cc/150?img=20",
+      "bio": "Digital Marketing Specialist."
+    },
+    "featured_image": "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07",
+    "excerpt": "Learn proven SEO techniques to increase organic traffic.",
+    "content": "Search Engine Optimization is essential for improving your website's visibility. This comprehensive guide covers keyword research, on-page optimization, backlink building, technical SEO, and content strategy to help you rank higher on search engines.",
+    "tags": ["SEO", "Marketing", "Blogging", "Google"],
+    "views": 9640,
+    "likes": 510,
+    "comments_count": 22,
+    "read_time": "7 min read",
+    "status": "published",
+    "is_featured": false,
+    "published_at": "2026-05-06T11:20:00Z"
+  },
+  {
+    "id": 5,
+    "category_id": 5,
+    "title": "How to Build a Successful Startup in 2026",
+    "slug": "how-to-build-a-successful-startup-in-2026",
+    "author": {
+      "name": "Abdullah",
+      "avatar": "https://i.pravatar.cc/150?img=25",
+      "bio": "Entrepreneur and Product Builder."
+    },
+    "featured_image": "https://images.unsplash.com/photo-1552664730-d307ca884978",
+    "excerpt": "A practical guide to launching and scaling a startup.",
+    "content": "Building a startup requires a strong vision, market validation, product development, funding, and customer acquisition. This article walks through each stage of the startup journey and shares actionable tips to help entrepreneurs succeed.",
+    "tags": ["Startup", "Business", "Entrepreneurship", "Growth"],
+    "views": 8450,
+    "likes": 460,
+    "comments_count": 19,
+    "read_time": "9 min read",
+    "status": "published",
+    "is_featured": true,
+    "published_at": "2026-05-05T14:45:00Z"
+  }
+]
