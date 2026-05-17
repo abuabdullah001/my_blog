@@ -140,9 +140,14 @@ const BlogDetails = () => {
                             <div className="space-y-6">
                                 {blogData.curriculum?.map((module, idx) => (
                                     <div key={idx} className="bg-slate-50/50 rounded-[32px] p-6 md:p-10 border border-slate-100 shadow-sm">
-                                        <h2 className="text-2xl md:text-3xl font-black text-emerald-500 mb-6 leading-tight">
-                                            {module.title}
-                                        </h2>
+                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                                            <h2 className="text-2xl md:text-3xl font-black text-emerald-500 leading-tight">
+                                                {module.title}
+                                            </h2>
+                                            <div className="badge badge-lg bg-emerald-100 text-emerald-700 border-none font-bold shrink-0">
+                                                {module.subtitle}
+                                            </div>
+                                        </div>
                                         
                                         <div className="flex items-center gap-3 mb-8">
                                             <span className="text-slate-900 font-bold text-lg">ক্লাস নিবেনঃ</span>
@@ -152,7 +157,7 @@ const BlogDetails = () => {
                                             </div>
                                         </div>
 
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {module.topics?.map((topic, tidx) => (
                                                 <div key={tidx} className="collapse collapse-arrow bg-white rounded-2xl border border-slate-100 group transition-all shadow-sm">
                                                     <input type="checkbox" className="peer" /> 
@@ -177,30 +182,38 @@ const BlogDetails = () => {
                                                         <div className="py-4 px-2">
                                                             <div className="flex items-center gap-2 mb-3 text-xs font-bold text-slate-400 uppercase tracking-widest">
                                                                 <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-                                                                পাঠসমূহ ({topic.lessons?.length || 0})
+                                                                ক্লাস পার্টসমূহ ({topic.lessons?.length || 0})
                                                             </div>
-                                                            <ul className="space-y-2">
+                                                            <div className="grid grid-cols-1 gap-2">
                                                                 {topic.lessons?.map((lesson, lidx) => (
-                                                                    <li key={lidx} className="flex items-center gap-3 text-slate-600 text-sm font-medium p-2 rounded-lg hover:bg-white transition-colors">
-                                                                        <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
-                                                                            <svg className="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                                                                    <div key={lidx} className="flex items-center gap-3 bg-white p-3 rounded-xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all group/item">
+                                                                        <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 group-hover/item:bg-emerald-500 transition-colors">
+                                                                            <svg className="w-4 h-4 text-emerald-600 group-hover/item:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
                                                                         </div>
-                                                                        {lesson}
-                                                                    </li>
+                                                                        <div className="flex flex-col">
+                                                                            <span className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Part - {lidx + 1}</span>
+                                                                            <span className="text-slate-700 font-bold text-sm leading-tight">{lesson}</span>
+                                                                        </div>
+                                                                    </div>
                                                                 ))}
                                                                 {!topic.lessons && (
-                                                                    <li className="text-slate-400 text-xs italic italic">এই সপ্তাহের পাঠসমূহ শীঘ্রই যুক্ত করা হবে।</li>
+                                                                    <div className="text-slate-400 text-xs italic p-4 text-center border-2 border-dashed border-slate-200 rounded-xl">
+                                                                        এই সপ্তাহের পার্টসমূহ শীঘ্রই যুক্ত করা হবে।
+                                                                    </div>
                                                                 )}
-                                                            </ul>
+                                                            </div>
                                                             <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase">
-                                                                <span>সময়কাল: {topic.duration || "২ ঘণ্টা"}</span>
-                                                                {topic.is_preview && <span className="text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded">Preview Available</span>}
+                                                                <span className="flex items-center gap-1"><FaRegClock className="text-emerald-500" /> সময়কাল: {topic.duration || "২ ঘণ্টা"}</span>
+                                                                {topic.is_preview && <span className="text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">Preview Available</span>}
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             ))}
                                         </div>
+                                    </div>
+                                ))}
+                            </div>
                                     </div>
                                 ))}
                             </div>
