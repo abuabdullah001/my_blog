@@ -141,130 +141,76 @@ const BlogDetails = () => {
                                 </div>
                             </div>
 
-                            <div className="space-y-6">
+                            <div className="space-y-12">
                                 {blogData.curriculum?.map((module, idx) => (
-                                    <div key={idx} className="bg-base-200/50 rounded-[32px] p-6 md:p-10 border border-base-300 shadow-xl hover:shadow-2xl transition-all duration-300">
-                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-                                            <div className="space-y-2">
-                                                <div className="flex items-center gap-3">
-                                                    <span className="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">
-                                                        {idx + 1}
-                                                    </span>
-                                                    <div className="badge badge-lg bg-emerald-100 text-emerald-700 border-none font-black px-4 py-3">
-                                                        {module.subtitle}
-                                                    </div>
-                                                </div>
-                                                <h2 className="text-2xl md:text-3xl font-black text-base-content leading-tight">
-                                                    {module.title}
-                                                </h2>
-                                            </div>
-                                            <div className="bg-base-100 px-6 py-4 rounded-3xl border border-base-300 shadow-sm flex flex-col items-center justify-center min-w-[120px]">
-                                                <span className="text-2xl font-black text-emerald-500">{module.total_classes || 0}</span>
-                                                <span className="text-[10px] font-bold text-base-content/40 uppercase tracking-widest leading-none">মোট ক্লাস</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="flex items-center gap-6 mb-10 pb-6 border-b border-base-300">
-                                            <div className="flex items-center gap-3">
-                                                <div className="avatar">
-                                                    <div className="w-10 rounded-full ring-2 ring-emerald-100 ring-offset-2">
-                                                        <img src={blogData.instructor?.avatar} alt={module.mentor} />
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <p className="text-[10px] font-bold text-base-content/40 uppercase tracking-tighter leading-none mb-1">প্রশিক্ষক</p>
-                                                    <p className="text-base-content font-bold text-sm">{module.mentor}</p>
-                                                </div>
-                                            </div>
-                                            <div className="h-8 w-px bg-base-300"></div>
-                                            <div className="flex items-center gap-3">
-                                                <div className="w-10 h-10 rounded-full bg-base-100 flex items-center justify-center text-base-content/50">
-                                                    <FaUsers className="text-lg" />
-                                                </div>
-                                                <div>
-                                                    <p className="text-[10px] font-bold text-base-content/40 uppercase tracking-tighter leading-none mb-1">সাপোর্ট</p>
-                                                    <p className="text-base-content font-bold text-sm">লাইভ সাপোর্ট</p>
+                                    <div key={idx} className="bg-white rounded-[32px] p-6 md:p-8 border border-slate-100 shadow-sm">
+                                        <div className="text-center mb-8">
+                                            <h2 className="text-2xl md:text-3xl font-black text-emerald-500 leading-tight mb-4">
+                                                {module.title} ({module.subtitle})
+                                            </h2>
+                                            <div className="flex items-center justify-center gap-2 text-slate-500 font-bold">
+                                                <span>ক্লাস নিবেনঃ</span>
+                                                <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-100">
+                                                    <img src={blogData.instructor?.avatar} alt={module.mentor} className="w-5 h-5 rounded-full" />
+                                                    <span className="text-slate-700 text-sm">{module.mentor}</span>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {module.topics?.map((topic, tidx) => (
-                                                <div key={tidx} className="collapse collapse-arrow group bg-base-100 rounded-3xl border border-base-300 transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+                                                <div key={tidx} className="collapse collapse-arrow bg-white rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 hover:shadow-md">
                                                     <input type="checkbox" className="peer" />
-                                                    <div className="collapse-title p-0 min-h-0">
-                                                        <div className="p-6">
-                                                            <div className="flex items-start gap-5">
-                                                                <div className={`w-16 h-16 rounded-2xl flex flex-col items-center justify-center text-white shrink-0 shadow-lg ${
-                                                                    tidx % 4 === 0 ? 'bg-gradient-to-br from-amber-400 to-amber-600' : 
-                                                                    tidx % 4 === 1 ? 'bg-gradient-to-br from-orange-400 to-orange-600' : 
-                                                                    tidx % 4 === 2 ? 'bg-gradient-to-br from-purple-400 to-purple-600' : 
-                                                                    'bg-gradient-to-br from-sky-400 to-sky-600'
-                                                                }`}>
-                                                                    <span className="text-[10px] font-black uppercase leading-none opacity-80 mb-1">সপ্তাহ</span>
-                                                                    <span className="text-2xl font-black tracking-tighter">{topic.week || tidx + 1}</span>
-                                                                </div>
-                                                                <div className="flex-1 pr-8">
-                                                                    <div className="flex items-center gap-2 mb-2">
-                                                                        <span className="text-[10px] font-black text-base-content/50 uppercase tracking-widest bg-base-200 px-2 py-0.5 rounded border border-base-300">
-                                                                            {topic.duration || "২ ঘণ্টা"} সেশন
-                                                                        </span>
-                                                                        {topic.is_preview && (
-                                                                            <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 animate-pulse">
-                                                                                ফ্রি প্রিভিউ
-                                                                            </span>
-                                                                        )}
-                                                                    </div>
-                                                                    <h4 className="text-base-content font-black text-lg leading-tight group-hover:text-emerald-500 transition-colors">
-                                                                        {topic.title}
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
+                                                    <div className="collapse-title p-4 flex items-center gap-4">
+                                                        <div className={`w-12 h-12 rounded-xl flex flex-col items-center justify-center text-white shrink-0 shadow-sm ${
+                                                            tidx % 4 === 0 ? 'bg-amber-500' : 
+                                                            tidx % 4 === 1 ? 'bg-orange-500' : 
+                                                            tidx % 4 === 2 ? 'bg-purple-500' : 'bg-sky-500'
+                                                        }`}>
+                                                            <span className="text-[8px] font-black uppercase leading-none opacity-80">সপ্তাহ</span>
+                                                            <span className="text-lg font-black">{topic.week || tidx + 1}</span>
                                                         </div>
+                                                        <h4 className="text-slate-800 font-bold text-sm leading-tight pr-4">
+                                                            {topic.title}
+                                                        </h4>
                                                     </div>
 
-                                                    <div className="collapse-content px-6 pb-6 pt-0">
-                                                        <div className="space-y-3 mt-4 border-t border-base-200 pt-6">
-                                                            <div className="flex items-center gap-2 text-xs font-black text-base-content/40 uppercase tracking-tighter mb-4">
-                                                                <div className="w-5 h-5 rounded bg-emerald-50 flex items-center justify-center">
-                                                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
-                                                                </div>
-                                                                এই সপ্তাহের পাঠসমূহ:
+                                                    <div className="collapse-content bg-slate-50/30 px-6 pb-6">
+                                                        <div className="pt-4 space-y-4">
+                                                            <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                                                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M12 20a8 8 0 100-16 8 8 0 000 16z"/><circle cx="12" cy="12" r="3"/></svg>
+                                                                {topic.lessons?.length || 2} Live Class
                                                             </div>
                                                             
-                                                            <div className="grid grid-cols-1 gap-2.5">
+                                                            <div className="space-y-4">
                                                                 {topic.lessons ? topic.lessons.map((lesson, lidx) => (
-                                                                    <div key={lidx} className="flex items-center gap-4 bg-base-200/50 p-3 rounded-2xl border border-transparent hover:border-emerald-100 hover:bg-base-100 hover:shadow-sm transition-all group/item">
-                                                                        <div className="w-7 h-7 rounded-full bg-base-100 flex items-center justify-center text-[10px] font-black text-emerald-500 border border-emerald-100 shadow-sm group-hover/item:bg-emerald-500 group-hover/item:text-white group-hover/item:border-emerald-500 transition-all">
-                                                                            {lidx + 1}
-                                                                        </div>
-                                                                        <span className="text-base-content/80 font-bold text-sm leading-tight flex-1">
-                                                                            {lesson}
-                                                                        </span>
-                                                                        <div className="opacity-0 group-hover/item:opacity-100 transition-opacity">
-                                                                            <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                                                                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                                                                            </svg>
-                                                                        </div>
+                                                                    <div key={lidx} className="space-y-1">
+                                                                        <h5 className="text-slate-900 font-black text-sm">
+                                                                            Live Class {lidx + 1}: {lesson}
+                                                                        </h5>
+                                                                        <p className="text-slate-500 text-xs leading-relaxed">
+                                                                            {/* Simulating the sub-points seen in user screenshot */}
+                                                                            Introduction to the topic | Preparing Environment | Writing and Running Your First Program | Understanding how logic works | Practice and Examples | Detailed Breakdown.
+                                                                        </p>
                                                                     </div>
                                                                 )) : (
-                                                                    <div className="flex flex-col items-center justify-center py-6 px-4 bg-base-200/50 rounded-2xl border-2 border-dashed border-base-300">
-                                                                        <FaRegClock className="text-base-content/30 text-2xl mb-2" />
-                                                                        <p className="text-base-content/40 font-bold text-xs uppercase text-center">নতুন ক্লাস শীঘ্রই আসছে</p>
+                                                                    <div className="space-y-4">
+                                                                        {[1, 2].map((i) => (
+                                                                            <div key={i} className="space-y-1">
+                                                                                <h5 className="text-slate-900 font-black text-sm">Live Class {i}: Coming Soon</h5>
+                                                                                <p className="text-slate-500 text-xs leading-relaxed">
+                                                                                    Detailed topics for this class will be updated shortly before the session starts.
+                                                                                </p>
+                                                                            </div>
+                                                                        ))}
                                                                     </div>
                                                                 )}
                                                             </div>
 
-                                                            {topic.is_preview && (
-                                                                <div className="mt-4 bg-emerald-500 p-3 rounded-2xl flex items-center justify-between hover:bg-emerald-600 transition-colors cursor-pointer text-white">
-                                                                    <span className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
-                                                                        <FaVideo /> ক্লাসটি দেখুন
-                                                                    </span>
-                                                                    <svg className="w-4 h-4 animate-bounce-horizontal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                                                    </svg>
-                                                                </div>
-                                                            )}
+                                                            <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase">
+                                                                <span className="flex items-center gap-1"><FaRegClock className="text-emerald-500" /> সময়কাল: {topic.duration || "২ ঘণ্টা"}</span>
+                                                                {topic.is_preview && <span className="text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">Free Preview</span>}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
