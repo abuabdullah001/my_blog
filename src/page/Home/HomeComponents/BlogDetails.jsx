@@ -190,36 +190,41 @@ const BlogDetails = () => {
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {module.topics?.map((topic, tidx) => (
-                                                <div key={tidx} className="group/card bg-base-100 rounded-3xl border border-base-300 transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
-                                                    <div className="p-6">
-                                                        <div className="flex items-start gap-5 mb-6">
-                                                            <div className={`w-16 h-16 rounded-2xl flex flex-col items-center justify-center text-white shrink-0 shadow-lg ${
-                                                                tidx % 4 === 0 ? 'bg-gradient-to-br from-amber-400 to-amber-600' : 
-                                                                tidx % 4 === 1 ? 'bg-gradient-to-br from-orange-400 to-orange-600' : 
-                                                                tidx % 4 === 2 ? 'bg-gradient-to-br from-purple-400 to-purple-600' : 
-                                                                'bg-gradient-to-br from-sky-400 to-sky-600'
-                                                            }`}>
-                                                                <span className="text-[10px] font-black uppercase leading-none opacity-80 mb-1">সপ্তাহ</span>
-                                                                <span className="text-2xl font-black tracking-tighter">{topic.week || tidx + 1}</span>
-                                                            </div>
-                                                            <div className="flex-1">
-                                                                <div className="flex items-center gap-2 mb-2">
-                                                                    <span className="text-[10px] font-black text-base-content/50 uppercase tracking-widest bg-base-200 px-2 py-0.5 rounded border border-base-300">
-                                                                        {topic.duration || "২ ঘণ্টা"} সেশন
-                                                                    </span>
-                                                                    {topic.is_preview && (
-                                                                        <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 animate-pulse">
-                                                                            ফ্রি প্রিভিউ
-                                                                        </span>
-                                                                    )}
+                                                <div key={tidx} className="collapse collapse-arrow group bg-base-100 rounded-3xl border border-base-300 transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+                                                    <input type="checkbox" className="peer" />
+                                                    <div className="collapse-title p-0 min-h-0">
+                                                        <div className="p-6">
+                                                            <div className="flex items-start gap-5">
+                                                                <div className={`w-16 h-16 rounded-2xl flex flex-col items-center justify-center text-white shrink-0 shadow-lg ${
+                                                                    tidx % 4 === 0 ? 'bg-gradient-to-br from-amber-400 to-amber-600' : 
+                                                                    tidx % 4 === 1 ? 'bg-gradient-to-br from-orange-400 to-orange-600' : 
+                                                                    tidx % 4 === 2 ? 'bg-gradient-to-br from-purple-400 to-purple-600' : 
+                                                                    'bg-gradient-to-br from-sky-400 to-sky-600'
+                                                                }`}>
+                                                                    <span className="text-[10px] font-black uppercase leading-none opacity-80 mb-1">সপ্তাহ</span>
+                                                                    <span className="text-2xl font-black tracking-tighter">{topic.week || tidx + 1}</span>
                                                                 </div>
-                                                                <h4 className="text-base-content font-black text-lg leading-tight group-hover/card:text-emerald-500 transition-colors">
-                                                                    {topic.title}
-                                                                </h4>
+                                                                <div className="flex-1 pr-8">
+                                                                    <div className="flex items-center gap-2 mb-2">
+                                                                        <span className="text-[10px] font-black text-base-content/50 uppercase tracking-widest bg-base-200 px-2 py-0.5 rounded border border-base-300">
+                                                                            {topic.duration || "২ ঘণ্টা"} সেশন
+                                                                        </span>
+                                                                        {topic.is_preview && (
+                                                                            <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 animate-pulse">
+                                                                                ফ্রি প্রিভিউ
+                                                                            </span>
+                                                                        )}
+                                                                    </div>
+                                                                    <h4 className="text-base-content font-black text-lg leading-tight group-hover:text-emerald-500 transition-colors">
+                                                                        {topic.title}
+                                                                    </h4>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                    </div>
 
-                                                        <div className="space-y-3">
+                                                    <div className="collapse-content px-6 pb-6 pt-0">
+                                                        <div className="space-y-3 mt-4 border-t border-base-200 pt-6">
                                                             <div className="flex items-center gap-2 text-xs font-black text-base-content/40 uppercase tracking-tighter mb-4">
                                                                 <div className="w-5 h-5 rounded bg-emerald-50 flex items-center justify-center">
                                                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
@@ -249,19 +254,19 @@ const BlogDetails = () => {
                                                                     </div>
                                                                 )}
                                                             </div>
+
+                                                            {topic.is_preview && (
+                                                                <div className="mt-4 bg-emerald-500 p-3 rounded-2xl flex items-center justify-between hover:bg-emerald-600 transition-colors cursor-pointer text-white">
+                                                                    <span className="text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+                                                                        <FaVideo /> ক্লাসটি দেখুন
+                                                                    </span>
+                                                                    <svg className="w-4 h-4 animate-bounce-horizontal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                                                                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                                    </svg>
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     </div>
-                                                    
-                                                    {topic.is_preview && (
-                                                        <div className="bg-emerald-500 py-3 px-6 flex items-center justify-between group-hover/card:bg-emerald-600 transition-colors cursor-pointer">
-                                                            <span className="text-white text-xs font-black uppercase tracking-widest flex items-center gap-2">
-                                                                <FaVideo /> ক্লাসটি দেখুন
-                                                            </span>
-                                                            <svg className="w-4 h-4 text-white animate-bounce-horizontal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                                            </svg>
-                                                        </div>
-                                                    )}
                                                 </div>
                                             ))}
                                         </div>
