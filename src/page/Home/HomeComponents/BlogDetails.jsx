@@ -10,21 +10,25 @@ const BlogDetails = () => {
     const [loading, setLoading] = useState(!location.state?.blog);
 
     useEffect(() => {
-        if (!blogData) {
-            // Fetch the specific JSON for the details
-            fetch('/blogDetails.json')
-                .then(res => res.json())
-                .then(data => {
-                    // In a real app we'd filter by slug, but here we use the specific file
-                    setBlogData(data);
-                    setLoading(false);
-                })
-                .catch(err => {
-                    console.error("Error fetching blog details:", err);
-                    setLoading(false);
-                });
+        // Always set loading to true when slug changes and we don't have state
+        if (!location.state?.blog) {
+            setLoading(true);
         }
-    }, [slug, blogData]);
+
+        // Fetch the specific JSON for the details
+        fetch('/blogDetails.json')
+            .then(res => res.json())
+            .then(data => {
+                // In a real app we'd filter by slug: data.find(b => b.slug === slug)
+                // For now, we simulate finding the correct blog or just setting the data
+                setBlogData(data);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.error("Error fetching blog details:", err);
+                setLoading(false);
+            });
+    }, [slug]); // Dependencies: only slug to re-fetch when URL changes
 
     if (loading) {
         return (

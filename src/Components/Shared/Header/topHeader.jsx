@@ -8,7 +8,7 @@ import {
 
 const Topheader = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-200 to-blue-300 text-gray-800">
+    <div className="bg-gradient-to-r blue ">
       <div className="container mx-auto px-4 py-3">
         {/* Mobile: only social icons */}
         {/* Desktop (md and above): social icons + navigation links */}
