@@ -154,24 +154,49 @@ const BlogDetails = () => {
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                             {module.topics?.map((topic, tidx) => (
-                                                <div key={tidx} className="bg-white rounded-2xl p-2 border border-slate-100 flex items-center justify-between group cursor-pointer hover:border-emerald-200 transition-all shadow-sm">
-                                                    <div className="flex items-center gap-4 flex-1">
-                                                        <div className={`w-14 h-14 rounded-xl flex flex-col items-center justify-center text-white shrink-0 shadow-lg ${
-                                                            tidx === 0 ? 'bg-amber-500' : 
-                                                            tidx === 1 ? 'bg-orange-500' : 
-                                                            tidx === 2 ? 'bg-purple-500' : 'bg-sky-500'
-                                                        }`}>
-                                                            <span className="text-[10px] font-black uppercase leading-none opacity-80">সপ্তাহ</span>
-                                                            <span className="text-xl font-black tracking-tighter">{tidx + 1}</span>
-                                                        </div>
-                                                        <div className="flex-1 pr-4">
-                                                            <h4 className="text-slate-800 font-bold text-sm leading-snug group-hover:text-emerald-600 transition-colors">
-                                                                {topic.title}
-                                                            </h4>
+                                                <div key={tidx} className="collapse collapse-arrow bg-white rounded-2xl border border-slate-100 group transition-all shadow-sm">
+                                                    <input type="checkbox" className="peer" /> 
+                                                    <div className="collapse-title p-2 flex items-center min-h-0 peer-checked:border-b peer-checked:border-slate-50">
+                                                        <div className="flex items-center gap-4 flex-1">
+                                                            <div className={`w-14 h-14 rounded-xl flex flex-col items-center justify-center text-white shrink-0 shadow-lg ${
+                                                                tidx % 4 === 0 ? 'bg-amber-500' : 
+                                                                tidx % 4 === 1 ? 'bg-orange-500' : 
+                                                                tidx % 4 === 2 ? 'bg-purple-500' : 'bg-sky-500'
+                                                            }`}>
+                                                                <span className="text-[10px] font-black uppercase leading-none opacity-80">সপ্তাহ</span>
+                                                                <span className="text-xl font-black tracking-tighter">{topic.week || tidx + 1}</span>
+                                                            </div>
+                                                            <div className="flex-1 pr-4">
+                                                                <h4 className="text-slate-800 font-bold text-sm leading-snug group-hover:text-emerald-600 transition-colors">
+                                                                    {topic.title}
+                                                                </h4>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-emerald-50 group-hover:text-emerald-500 transition-all mr-2">
-                                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                                                    <div className="collapse-content bg-slate-50/30">
+                                                        <div className="py-4 px-2">
+                                                            <div className="flex items-center gap-2 mb-3 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                                                                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                                                                পাঠসমূহ ({topic.lessons?.length || 0})
+                                                            </div>
+                                                            <ul className="space-y-2">
+                                                                {topic.lessons?.map((lesson, lidx) => (
+                                                                    <li key={lidx} className="flex items-center gap-3 text-slate-600 text-sm font-medium p-2 rounded-lg hover:bg-white transition-colors">
+                                                                        <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0">
+                                                                            <svg className="w-3 h-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                                                                        </div>
+                                                                        {lesson}
+                                                                    </li>
+                                                                ))}
+                                                                {!topic.lessons && (
+                                                                    <li className="text-slate-400 text-xs italic italic">এই সপ্তাহের পাঠসমূহ শীঘ্রই যুক্ত করা হবে।</li>
+                                                                )}
+                                                            </ul>
+                                                            <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase">
+                                                                <span>সময়কাল: {topic.duration || "২ ঘণ্টা"}</span>
+                                                                {topic.is_preview && <span className="text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded">Preview Available</span>}
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             ))}
