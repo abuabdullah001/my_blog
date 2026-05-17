@@ -115,22 +115,22 @@ const BlogDetails = () => {
                         {/* Curriculum */}
                         <div className="pt-10">
                             <div className="text-center mb-10">
-                                <h1 className="text-3xl md:text-4xl font-black text-slate-800 mb-3">কারিকুলাম</h1>
-                                <div className="flex items-center justify-center gap-6 text-slate-500 font-medium text-sm">
+                                <h1 className="text-3xl md:text-4xl font-black text-primary mb-3">কারিকুলাম</h1>
+                                <div className="flex items-center justify-center gap-6 text-base-content/60 font-medium text-sm">
                                     <span className="flex items-center gap-2">
-                                        <div className="w-5 h-5 bg-slate-100 rounded flex items-center justify-center">
+                                        <div className="w-5 h-5 bg-base-200 rounded flex items-center justify-center">
                                             <div className="grid grid-cols-2 gap-0.5">
-                                                <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
-                                                <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
-                                                <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
-                                                <div className="w-1 h-1 bg-slate-400 rounded-full"></div>
+                                                <div className="w-1 h-1 bg-primary/40 rounded-full"></div>
+                                                <div className="w-1 h-1 bg-primary/40 rounded-full"></div>
+                                                <div className="w-1 h-1 bg-primary/40 rounded-full"></div>
+                                                <div className="w-1 h-1 bg-primary/40 rounded-full"></div>
                                             </div>
                                         </div>
                                         {blogData.course_features?.total_modules || 22} মডিউল
                                     </span>
                                     <span className="flex items-center gap-2">
-                                        <div className="w-5 h-5 bg-slate-100 rounded flex items-center justify-center">
-                                            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20a8 8 0 100-16 8 8 0 000 16z"/><circle cx="12" cy="12" r="3"/></svg>
+                                        <div className="w-5 h-5 bg-base-200 rounded flex items-center justify-center">
+                                            <svg className="w-3.5 h-3.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20a8 8 0 100-16 8 8 0 000 16z"/><circle cx="12" cy="12" r="3"/></svg>
                                         </div>
                                         {blogData.course_features?.total_live_classes || 84} লাইভ ক্লাস
                                     </span>
@@ -139,7 +139,7 @@ const BlogDetails = () => {
 
                             <div className="space-y-6">
                                 {blogData.curriculum?.map((module, idx) => (
-                                    <div key={idx} className="bg-slate-50/50 rounded-[32px] p-6 md:p-10 border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                                    <div key={idx} className="bg-base-200/50 rounded-[32px] p-6 md:p-10 border border-base-300 shadow-xl hover:shadow-2xl transition-all duration-300">
                                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                                             <div className="space-y-2">
                                                 <div className="flex items-center gap-3">
@@ -150,17 +150,17 @@ const BlogDetails = () => {
                                                         {module.subtitle}
                                                     </div>
                                                 </div>
-                                                <h2 className="text-2xl md:text-3xl font-black text-slate-800 leading-tight">
+                                                <h2 className="text-2xl md:text-3xl font-black text-base-content leading-tight">
                                                     {module.title}
                                                 </h2>
                                             </div>
-                                            <div className="bg-white px-6 py-4 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center justify-center min-w-[120px]">
+                                            <div className="bg-base-100 px-6 py-4 rounded-3xl border border-base-300 shadow-sm flex flex-col items-center justify-center min-w-[120px]">
                                                 <span className="text-2xl font-black text-emerald-500">{module.total_classes || 0}</span>
-                                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">মোট ক্লাস</span>
+                                                <span className="text-[10px] font-bold text-base-content/40 uppercase tracking-widest leading-none">মোট ক্লাস</span>
                                             </div>
                                         </div>
                                         
-                                        <div className="flex items-center gap-6 mb-10 pb-6 border-b border-slate-100">
+                                        <div className="flex items-center gap-6 mb-10 pb-6 border-b border-base-300">
                                             <div className="flex items-center gap-3">
                                                 <div className="avatar">
                                                     <div className="w-10 rounded-full ring-2 ring-emerald-100 ring-offset-2">
@@ -168,25 +168,25 @@ const BlogDetails = () => {
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter leading-none mb-1">প্রশিক্ষক</p>
-                                                    <p className="text-slate-700 font-bold text-sm">{module.mentor}</p>
+                                                    <p className="text-[10px] font-bold text-base-content/40 uppercase tracking-tighter leading-none mb-1">প্রশিক্ষক</p>
+                                                    <p className="text-base-content font-bold text-sm">{module.mentor}</p>
                                                 </div>
                                             </div>
-                                            <div className="h-8 w-px bg-slate-100"></div>
+                                            <div className="h-8 w-px bg-base-300"></div>
                                             <div className="flex items-center gap-3">
-                                                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">
+                                                <div className="w-10 h-10 rounded-full bg-base-100 flex items-center justify-center text-base-content/50">
                                                     <FaUsers className="text-lg" />
                                                 </div>
                                                 <div>
-                                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter leading-none mb-1">সাপোর্ট</p>
-                                                    <p className="text-slate-700 font-bold text-sm">লাইভ সাপোর্ট</p>
+                                                    <p className="text-[10px] font-bold text-base-content/40 uppercase tracking-tighter leading-none mb-1">সাপোর্ট</p>
+                                                    <p className="text-base-content font-bold text-sm">লাইভ সাপোর্ট</p>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {module.topics?.map((topic, tidx) => (
-                                                <div key={tidx} className="group/card bg-white rounded-3xl border border-slate-100 transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+                                                <div key={tidx} className="group/card bg-base-100 rounded-3xl border border-base-300 transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
                                                     <div className="p-6">
                                                         <div className="flex items-start gap-5 mb-6">
                                                             <div className={`w-16 h-16 rounded-2xl flex flex-col items-center justify-center text-white shrink-0 shadow-lg ${
@@ -200,7 +200,7 @@ const BlogDetails = () => {
                                                             </div>
                                                             <div className="flex-1">
                                                                 <div className="flex items-center gap-2 mb-2">
-                                                                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded border border-slate-100">
+                                                                    <span className="text-[10px] font-black text-base-content/50 uppercase tracking-widest bg-base-200 px-2 py-0.5 rounded border border-base-300">
                                                                         {topic.duration || "২ ঘণ্টা"} সেশন
                                                                     </span>
                                                                     {topic.is_preview && (
@@ -209,14 +209,14 @@ const BlogDetails = () => {
                                                                         </span>
                                                                     )}
                                                                 </div>
-                                                                <h4 className="text-slate-800 font-black text-lg leading-tight group-hover/card:text-emerald-600 transition-colors">
+                                                                <h4 className="text-base-content font-black text-lg leading-tight group-hover/card:text-emerald-500 transition-colors">
                                                                     {topic.title}
                                                                 </h4>
                                                             </div>
                                                         </div>
 
                                                         <div className="space-y-3">
-                                                            <div className="flex items-center gap-2 text-xs font-black text-slate-400 uppercase tracking-tighter mb-4">
+                                                            <div className="flex items-center gap-2 text-xs font-black text-base-content/40 uppercase tracking-tighter mb-4">
                                                                 <div className="w-5 h-5 rounded bg-emerald-50 flex items-center justify-center">
                                                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
                                                                 </div>
@@ -225,11 +225,11 @@ const BlogDetails = () => {
                                                             
                                                             <div className="grid grid-cols-1 gap-2.5">
                                                                 {topic.lessons ? topic.lessons.map((lesson, lidx) => (
-                                                                    <div key={lidx} className="flex items-center gap-4 bg-slate-50/50 p-3 rounded-2xl border border-transparent hover:border-emerald-100 hover:bg-white hover:shadow-sm transition-all group/item">
-                                                                        <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center text-[10px] font-black text-emerald-500 border border-emerald-100 shadow-sm group-hover/item:bg-emerald-500 group-hover/item:text-white group-hover/item:border-emerald-500 transition-all">
+                                                                    <div key={lidx} className="flex items-center gap-4 bg-base-200/50 p-3 rounded-2xl border border-transparent hover:border-emerald-100 hover:bg-base-100 hover:shadow-sm transition-all group/item">
+                                                                        <div className="w-7 h-7 rounded-full bg-base-100 flex items-center justify-center text-[10px] font-black text-emerald-500 border border-emerald-100 shadow-sm group-hover/item:bg-emerald-500 group-hover/item:text-white group-hover/item:border-emerald-500 transition-all">
                                                                             {lidx + 1}
                                                                         </div>
-                                                                        <span className="text-slate-600 font-bold text-sm leading-tight flex-1">
+                                                                        <span className="text-base-content/80 font-bold text-sm leading-tight flex-1">
                                                                             {lesson}
                                                                         </span>
                                                                         <div className="opacity-0 group-hover/item:opacity-100 transition-opacity">
@@ -239,9 +239,9 @@ const BlogDetails = () => {
                                                                         </div>
                                                                     </div>
                                                                 )) : (
-                                                                    <div className="flex flex-col items-center justify-center py-6 px-4 bg-slate-50/50 rounded-2xl border-2 border-dashed border-slate-200">
-                                                                        <FaRegClock className="text-slate-300 text-2xl mb-2" />
-                                                                        <p className="text-slate-400 font-bold text-xs uppercase text-center">নতুন ক্লাস শীঘ্রই আসছে</p>
+                                                                    <div className="flex flex-col items-center justify-center py-6 px-4 bg-base-200/50 rounded-2xl border-2 border-dashed border-base-300">
+                                                                        <FaRegClock className="text-base-content/30 text-2xl mb-2" />
+                                                                        <p className="text-base-content/40 font-bold text-xs uppercase text-center">নতুন ক্লাস শীঘ্রই আসছে</p>
                                                                     </div>
                                                                 )}
                                                             </div>
