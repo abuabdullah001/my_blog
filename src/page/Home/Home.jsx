@@ -50,7 +50,7 @@ const Home = () => {
 
                         <section className="bg-base-200 p-6 rounded-2xl shadow-sm border border-base-300">
                             <h2 className="text-xl font-bold mb-4 border-l-4 border-secondary pl-3">Popular Posts</h2>
-                            <CategoryBlog blogs={blogs} />
+                            <CategoryBlog categoryId={selectedCategory} blogs={blogs} />
                         </section>
                     </div>
                 </div>
