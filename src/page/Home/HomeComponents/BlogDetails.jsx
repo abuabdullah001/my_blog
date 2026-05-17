@@ -138,6 +138,7 @@ const BlogDetails = () => {
                             </div>
 
                             <div className="space-y-6">
+                                {blogData.curriculum?.map((module, idx) => (
                                     <div key={idx} className="bg-slate-50/50 rounded-[32px] p-6 md:p-10 border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-300">
                                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
                                             <div className="space-y-2">
