@@ -138,76 +138,125 @@ const BlogDetails = () => {
                             </div>
 
                             <div className="space-y-6">
-                                {blogData.curriculum?.map((module, idx) => (
-                                    <div key={idx} className="bg-slate-50/50 rounded-[32px] p-6 md:p-10 border border-slate-100 shadow-sm">
-                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                                            <h2 className="text-2xl md:text-3xl font-black text-emerald-500 leading-tight">
-                                                {module.title}
-                                            </h2>
-                                            <div className="badge badge-lg bg-emerald-100 text-emerald-700 border-none font-bold shrink-0">
-                                                {module.subtitle}
+                                    <div key={idx} className="bg-slate-50/50 rounded-[32px] p-6 md:p-10 border border-slate-100 shadow-xl hover:shadow-2xl transition-all duration-300">
+                                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                                            <div className="space-y-2">
+                                                <div className="flex items-center gap-3">
+                                                    <span className="w-8 h-8 rounded-lg bg-emerald-500 text-white flex items-center justify-center font-bold text-sm">
+                                                        {idx + 1}
+                                                    </span>
+                                                    <div className="badge badge-lg bg-emerald-100 text-emerald-700 border-none font-black px-4 py-3">
+                                                        {module.subtitle}
+                                                    </div>
+                                                </div>
+                                                <h2 className="text-2xl md:text-3xl font-black text-slate-800 leading-tight">
+                                                    {module.title}
+                                                </h2>
+                                            </div>
+                                            <div className="bg-white px-6 py-4 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center justify-center min-w-[120px]">
+                                                <span className="text-2xl font-black text-emerald-500">{module.total_classes || 0}</span>
+                                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none">মোট ক্লাস</span>
                                             </div>
                                         </div>
                                         
-                                        <div className="flex items-center gap-3 mb-8">
-                                            <span className="text-slate-900 font-bold text-lg">ক্লাস নিবেনঃ</span>
-                                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-slate-100 shadow-sm">
-                                                <img src={blogData.instructor?.avatar} alt={module.mentor} className="w-6 h-6 rounded-full" />
-                                                <span className="text-slate-600 font-bold text-sm">{module.mentor}</span>
+                                        <div className="flex items-center gap-6 mb-10 pb-6 border-b border-slate-100">
+                                            <div className="flex items-center gap-3">
+                                                <div className="avatar">
+                                                    <div className="w-10 rounded-full ring-2 ring-emerald-100 ring-offset-2">
+                                                        <img src={blogData.instructor?.avatar} alt={module.mentor} />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter leading-none mb-1">প্রশিক্ষক</p>
+                                                    <p className="text-slate-700 font-bold text-sm">{module.mentor}</p>
+                                                </div>
+                                            </div>
+                                            <div className="h-8 w-px bg-slate-100"></div>
+                                            <div className="flex items-center gap-3">
+                                                <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500">
+                                                    <FaUsers className="text-lg" />
+                                                </div>
+                                                <div>
+                                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter leading-none mb-1">সাপোর্ট</p>
+                                                    <p className="text-slate-700 font-bold text-sm">লাইভ সাপোর্ট</p>
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             {module.topics?.map((topic, tidx) => (
-                                                <div key={tidx} className="collapse collapse-arrow bg-white rounded-2xl border border-slate-100 group transition-all shadow-sm">
-                                                    <input type="checkbox" className="peer" /> 
-                                                    <div className="collapse-title p-2 flex items-center min-h-0 peer-checked:border-b peer-checked:border-slate-50">
-                                                        <div className="flex items-center gap-4 flex-1">
-                                                            <div className={`w-14 h-14 rounded-xl flex flex-col items-center justify-center text-white shrink-0 shadow-lg ${
-                                                                tidx % 4 === 0 ? 'bg-amber-500' : 
-                                                                tidx % 4 === 1 ? 'bg-orange-500' : 
-                                                                tidx % 4 === 2 ? 'bg-purple-500' : 'bg-sky-500'
+                                                <div key={tidx} className="group/card bg-white rounded-3xl border border-slate-100 transition-all duration-300 hover:border-emerald-200 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+                                                    <div className="p-6">
+                                                        <div className="flex items-start gap-5 mb-6">
+                                                            <div className={`w-16 h-16 rounded-2xl flex flex-col items-center justify-center text-white shrink-0 shadow-lg ${
+                                                                tidx % 4 === 0 ? 'bg-gradient-to-br from-amber-400 to-amber-600' : 
+                                                                tidx % 4 === 1 ? 'bg-gradient-to-br from-orange-400 to-orange-600' : 
+                                                                tidx % 4 === 2 ? 'bg-gradient-to-br from-purple-400 to-purple-600' : 
+                                                                'bg-gradient-to-br from-sky-400 to-sky-600'
                                                             }`}>
-                                                                <span className="text-[10px] font-black uppercase leading-none opacity-80">সপ্তাহ</span>
-                                                                <span className="text-xl font-black tracking-tighter">{topic.week || tidx + 1}</span>
+                                                                <span className="text-[10px] font-black uppercase leading-none opacity-80 mb-1">সপ্তাহ</span>
+                                                                <span className="text-2xl font-black tracking-tighter">{topic.week || tidx + 1}</span>
                                                             </div>
-                                                            <div className="flex-1 pr-4">
-                                                                <h4 className="text-slate-800 font-bold text-sm leading-snug group-hover:text-emerald-600 transition-colors">
+                                                            <div className="flex-1">
+                                                                <div className="flex items-center gap-2 mb-2">
+                                                                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest bg-slate-50 px-2 py-0.5 rounded border border-slate-100">
+                                                                        {topic.duration || "২ ঘণ্টা"} সেশন
+                                                                    </span>
+                                                                    {topic.is_preview && (
+                                                                        <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 animate-pulse">
+                                                                            ফ্রি প্রিভিউ
+                                                                        </span>
+                                                                    )}
+                                                                </div>
+                                                                <h4 className="text-slate-800 font-black text-lg leading-tight group-hover/card:text-emerald-600 transition-colors">
                                                                     {topic.title}
                                                                 </h4>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="collapse-content bg-slate-50/30">
-                                                        <div className="py-4 px-2">
-                                                            <div className="flex items-center gap-2 mb-3 text-xs font-bold text-slate-400 uppercase tracking-widest">
-                                                                <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
-                                                                ক্লাস পার্টসমূহ ({topic.lessons?.length || 0})
+
+                                                        <div className="space-y-3">
+                                                            <div className="flex items-center gap-2 text-xs font-black text-slate-400 uppercase tracking-tighter mb-4">
+                                                                <div className="w-5 h-5 rounded bg-emerald-50 flex items-center justify-center">
+                                                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500"></div>
+                                                                </div>
+                                                                এই সপ্তাহের পাঠসমূহ:
                                                             </div>
-                                                            <div className="grid grid-cols-1 gap-2">
-                                                                {topic.lessons?.map((lesson, lidx) => (
-                                                                    <div key={lidx} className="flex items-center gap-3 bg-white p-3 rounded-xl border border-slate-100 hover:border-emerald-200 hover:shadow-md transition-all group/item">
-                                                                        <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 group-hover/item:bg-emerald-500 transition-colors">
-                                                                            <svg className="w-4 h-4 text-emerald-600 group-hover/item:text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/></svg>
+                                                            
+                                                            <div className="grid grid-cols-1 gap-2.5">
+                                                                {topic.lessons ? topic.lessons.map((lesson, lidx) => (
+                                                                    <div key={lidx} className="flex items-center gap-4 bg-slate-50/50 p-3 rounded-2xl border border-transparent hover:border-emerald-100 hover:bg-white hover:shadow-sm transition-all group/item">
+                                                                        <div className="w-7 h-7 rounded-full bg-white flex items-center justify-center text-[10px] font-black text-emerald-500 border border-emerald-100 shadow-sm group-hover/item:bg-emerald-500 group-hover/item:text-white group-hover/item:border-emerald-500 transition-all">
+                                                                            {lidx + 1}
                                                                         </div>
-                                                                        <div className="flex flex-col">
-                                                                            <span className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Part - {lidx + 1}</span>
-                                                                            <span className="text-slate-700 font-bold text-sm leading-tight">{lesson}</span>
+                                                                        <span className="text-slate-600 font-bold text-sm leading-tight flex-1">
+                                                                            {lesson}
+                                                                        </span>
+                                                                        <div className="opacity-0 group-hover/item:opacity-100 transition-opacity">
+                                                                            <svg className="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                                                                                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                                                            </svg>
                                                                         </div>
                                                                     </div>
-                                                                ))}
-                                                                {!topic.lessons && (
-                                                                    <div className="text-slate-400 text-xs italic p-4 text-center border-2 border-dashed border-slate-200 rounded-xl">
-                                                                        এই সপ্তাহের পার্টসমূহ শীঘ্রই যুক্ত করা হবে।
+                                                                )) : (
+                                                                    <div className="flex flex-col items-center justify-center py-6 px-4 bg-slate-50/50 rounded-2xl border-2 border-dashed border-slate-200">
+                                                                        <FaRegClock className="text-slate-300 text-2xl mb-2" />
+                                                                        <p className="text-slate-400 font-bold text-xs uppercase text-center">নতুন ক্লাস শীঘ্রই আসছে</p>
                                                                     </div>
                                                                 )}
                                                             </div>
-                                                            <div className="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase">
-                                                                <span className="flex items-center gap-1"><FaRegClock className="text-emerald-500" /> সময়কাল: {topic.duration || "২ ঘণ্টা"}</span>
-                                                                {topic.is_preview && <span className="text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">Preview Available</span>}
-                                                            </div>
                                                         </div>
                                                     </div>
+                                                    
+                                                    {topic.is_preview && (
+                                                        <div className="bg-emerald-500 py-3 px-6 flex items-center justify-between group-hover/card:bg-emerald-600 transition-colors cursor-pointer">
+                                                            <span className="text-white text-xs font-black uppercase tracking-widest flex items-center gap-2">
+                                                                <FaVideo /> ক্লাসটি দেখুন
+                                                            </span>
+                                                            <svg className="w-4 h-4 text-white animate-bounce-horizontal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                            </svg>
+                                                        </div>
+                                                    )}
                                                 </div>
                                             ))}
                                         </div>
