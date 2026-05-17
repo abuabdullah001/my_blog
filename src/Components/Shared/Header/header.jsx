@@ -7,7 +7,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navItems = [
-    "Home",
+    "Home", 
     "About",
     "Contact",
     "Blog",

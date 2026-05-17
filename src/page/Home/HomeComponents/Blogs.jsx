@@ -1,9 +1,12 @@
 import React from "react";
+import BlogCard from "./BlogCard";
 
-const Blogs = () => {
+const Blogs = ({blogs}) => {
   return (
-    <div>
-        <p>This is blogs.</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {blogs?.map(blog => (
+        <BlogCard key={blog.id} blog={blog} />
+      ))}
     </div>
   );
 };

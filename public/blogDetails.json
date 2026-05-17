@@ -1,0 +1,243 @@
+{
+  "id": 1,
+  "slug": "full-stack-web-development-python-django-react-ai",
+  "title": "Full Stack Web Development with Python, Django, React & AI",
+  "subtitle": "একদম শূন্য থেকে প্রফেশনাল ফুল স্ট্যাক ডেভেলপার হওয়ার সম্পূর্ণ গাইড",
+  "batch": {
+    "name": "Batch - 12",
+    "is_live": true,
+    "live_text": "লাইভ কোর্স"
+  },
+  "instructor": {
+    "id": 1,
+    "name": "Abdullah Zayed",
+    "title": "Senior Full Stack Developer & AI Instructor",
+    "avatar": "https://i.pravatar.cc/150?img=12",
+    "bio": "Python, Django, React ও AI Automation নিয়ে কাজ করছেন ৬+ বছর ধরে।"
+  },
+  "thumbnail": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+  "promo_video": {
+    "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+    "video_url": "https://www.youtube.com/watch?v=example",
+    "duration": "4:25"
+  },
+  "description": [
+    "একদম নতুন আপডেটেড কারিকুলামে ১২ সপ্তাহ ব্যাচ করে ২৮ জুন থেকে AI ও ইখন কোড লিখবে, আর আপনি দিবেন কমান্ড। এই ২ যুগের ওয়েব ডেভেলপমেন্ট।",
+    "তাই একদম শূন্য থেকে হাতে কলমে কাজ করতে করতে শিখবেন প্রোগ্রামিং, অবজেক্ট ওরিয়েন্টেড প্রোগ্রামিং, PostgreSQL, ব্যাকএন্ড এর জন্য Django, এবং API ডেভেলপমেন্ট এর জন্য DRF, ফ্রন্টএন্ড এর জন্য React।",
+    "শিখবেন AI দিয়ে একটা প্রোডাকশন গ্রেড প্রজেক্ট তৈরি করতে।"
+  ],
+  "pricing": {
+    "currency": "BDT",
+    "current_price": 8544,
+    "old_price": 8800,
+    "discount_percent": 10,
+    "is_discount_active": true,
+    "coupon": "EIDERKHUSHI"
+  },
+  "course_features": {
+    "duration": "26 Weeks",
+    "live_class_time": "10:00 PM - 11:30 PM",
+    "weekly_schedule": "Friday to Wednesday",
+    "total_live_classes": 84,
+    "total_modules": 22,
+    "support_type": "Community + Live Support",
+    "language": "Bangla"
+  },
+  "cta": {
+    "button_text": "ব্যাচ ভর্তি হন",
+    "button_url": "/checkout/full-stack-web-development-python-django-react-ai"
+  },
+  "countdown": {
+    "text": "ব্যাচ শুরু হতে সময় বাকি",
+    "end_date": "2026-06-28T19:00:00Z"
+  },
+  "what_you_will_get": [
+    "৮৪টি লাইভ ক্লাস",
+    "লাইফটাইম এক্সেস",
+    "ডাউনলোডেবল রিসোর্স",
+    "কমিউনিটি সাপোর্ট",
+    "৩০০+ রেকর্ডেড ভিডিও",
+    "ডেইলি প্র্যাকটিস টাস্ক",
+    "সার্টিফিকেট",
+    "২১ সপ্তাহের গাইডলাইন"
+  ],
+  "statistics": {
+    "students": 12540,
+    "reviews": 4520,
+    "rating": 4.9,
+    "completion_rate": "87%"
+  },
+  "curriculum": [
+    {
+      "module_id": 1,
+      "title": "একদম শূন্য থেকে পাইথন প্রোগ্রামিং | Object Oriented Programming | Claude Code Setup",
+      "subtitle": "Module 1-4",
+      "mentor": "Abdullah Zayed",
+      "total_classes": 12,
+      "topics": [
+        {
+          "week": 1,
+          "title": "Expense Tracker: Data, Logic & Structures in Action",
+          "lessons": [
+            "Python Variables",
+            "Data Types",
+            "Conditional Logic",
+            "Loops",
+            "Mini Project"
+          ],
+          "duration": "2h 30m",
+          "is_preview": true
+        },
+        {
+          "week": 2,
+          "title": "Smart Log Analyzer: Functions, Files & AI Automation",
+          "lessons": [
+            "Functions",
+            "File Handling",
+            "Error Handling",
+            "AI Automation Basics"
+          ],
+          "duration": "2h 45m",
+          "is_preview": false
+        },
+        {
+          "week": 3,
+          "title": "Object-Oriented Design & Design Patterns",
+          "lessons": [
+            "Classes & Objects",
+            "Inheritance",
+            "Polymorphism",
+            "Encapsulation"
+          ],
+          "duration": "3h",
+          "is_preview": false
+        },
+        {
+          "week": 4,
+          "title": "Data Fetcher Modules, APIs & Real-Time Data Processing",
+          "lessons": [
+            "REST API",
+            "JSON Handling",
+            "Requests Module",
+            "Realtime Data"
+          ],
+          "duration": "2h 20m",
+          "is_preview": true
+        }
+      ]
+    },
+    {
+      "module_id": 2,
+      "title": "Django Backend Development & PostgreSQL",
+      "subtitle": "Module 5-10",
+      "mentor": "Abdullah Zayed",
+      "total_classes": 24,
+      "topics": [
+        {
+          "week": 5,
+          "title": "Django Project Structure",
+          "duration": "2h"
+        },
+        {
+          "week": 6,
+          "title": "Models, Migrations & ORM",
+          "duration": "3h"
+        },
+        {
+          "week": 7,
+          "title": "Authentication & Authorization",
+          "duration": "2h 30m"
+        }
+      ]
+    },
+    {
+      "module_id": 3,
+      "title": "React Frontend Development",
+      "subtitle": "Module 11-16",
+      "mentor": "Abdullah Zayed",
+      "total_classes": 18,
+      "topics": [
+        {
+          "week": 11,
+          "title": "React Basics & Components"
+        },
+        {
+          "week": 12,
+          "title": "Hooks & State Management"
+        },
+        {
+          "week": 13,
+          "title": "API Integration with React"
+        }
+      ]
+    },
+    {
+      "module_id": 4,
+      "title": "AI Integration & Deployment",
+      "subtitle": "Module 17-22",
+      "mentor": "Abdullah Zayed",
+      "total_classes": 16,
+      "topics": [
+        {
+          "week": 17,
+          "title": "AI Coding Assistant Workflow"
+        },
+        {
+          "week": 18,
+          "title": "OpenAI API Integration"
+        },
+        {
+          "week": 19,
+          "title": "Deployment with Docker & VPS"
+        }
+      ]
+    }
+  ],
+  "requirements": [
+    "Basic computer knowledge",
+    "Internet connection",
+    "Laptop/Desktop",
+    "Learning mindset"
+  ],
+  "target_audience": [
+    "Beginners",
+    "University Students",
+    "Job Seekers",
+    "Freelancers",
+    "Developers switching to Python"
+  ],
+  "faq": [
+    {
+      "question": "এই কোর্স কি একদম বিগিনারদের জন্য?",
+      "answer": "হ্যাঁ, এই কোর্স একদম শূন্য থেকে শুরু করা হয়েছে।"
+    },
+    {
+      "question": "ক্লাস রেকর্ডিং পাবো?",
+      "answer": "হ্যাঁ, প্রতিটি লাইভ ক্লাসের রেকর্ডিং দেওয়া হবে।"
+    },
+    {
+      "question": "লাইফটাইম এক্সেস থাকবে?",
+      "answer": "হ্যাঁ, লাইফটাইম এক্সেস থাকবে।"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Rahim Ahmed",
+      "rating": 5,
+      "comment": "বাংলায় এত সুন্দর ফুল স্ট্যাক কোর্স আগে দেখিনি।",
+      "avatar": "https://i.pravatar.cc/100?img=22"
+    },
+    {
+      "id": 2,
+      "name": "Nusrat Jahan",
+      "rating": 5,
+      "comment": "প্রজেক্ট ভিত্তিক শেখানোর স্টাইল অসাধারণ।",
+      "avatar": "https://i.pravatar.cc/100?img=32"
+    }
+  ],
+  "status": "published",
+  "is_featured": true,
+  "created_at": "2026-05-18T10:00:00Z",
+  "updated_at": "2026-05-18T12:30:00Z"
+}

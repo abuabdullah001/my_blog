@@ -1,9 +1,8 @@
 import React from "react";
 
 const CategoryBlog = ({ blogs, categoryId, handleBlogClick }) => {
-  const filteredBlogs = categoryId 
-    ? blogs.filter(blog => blog.category_id === categoryId)
-    : blogs.slice(0, 5); // Show first 5 if no category selected
+  const filteredBlogs = categoryId ? blogs.filter(blog => blog.category_id === categoryId) : blogs.slice(0, 5); // Show first 5 if no category selected
+   
 
   if (filteredBlogs.length === 0) {
     return <div className="text-center py-4 text-base-content/50">No posts found in this category.</div>;

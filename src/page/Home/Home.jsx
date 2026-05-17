@@ -21,10 +21,9 @@ const Home = () => {
             .then(data => setCategories(data))
     }, [])
 
-    const handleCategorySelect = (categoryId) => {
-        setSelectedCategory(categoryId);
-        // You can also filter blogs based on the selected category here if needed
-    } 
+    const filteredBlogs = selectedCategory 
+        ? blogs.filter(blog => blog.category_id === selectedCategory) 
+        : blogs;
 
     return (
         <div className="bg-base-100 min-h-screen py-10">
@@ -34,10 +33,10 @@ const Home = () => {
                     <div className="lg:col-span-8">
                         <section className="bg-base-100 rounded-2xl">
                             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                                <span className="w-2 h-8 bg-accent rounded-full"></span>
+                                <span className="w-2 h-8 bg-primary rounded-full"></span>
                                 Latest Articles
                             </h2>
-                            <Blogs blogs={blogs} />
+                            <Blogs blogs={filteredBlogs} />
                         </section>
                     </div>
 

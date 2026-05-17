@@ -7,7 +7,7 @@ const Category = ({ categories, selectedCategory, onSelectCategory }) => {
         <button
           key={category.id}
           onClick={() => onSelectCategory(category.id) }
-          className={`group flex items-center justify-between w-full p-3 rounded-xl border transition-all duration-300 ${
+          className={`cursor-pointer group flex items-center justify-between w-full p-3 rounded-xl border transition-all duration-300 ${
             selectedCategory === category.id
               ? "bg-primary/10 border-primary text-primary"
               : "bg-base-100 border-base-300 hover:border-primary hover:bg-primary/5 shadow-sm"
